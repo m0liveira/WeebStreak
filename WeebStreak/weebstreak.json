@@ -1,0 +1,32 @@
+{
+    "id": "weebstreak",
+    "name": "WeebStreak",
+    "version": "1.0.0",
+    "manifestURI": "",
+    "language": "typescript",
+    "type": "plugin",
+    "description": "Keeps your anime / manga streak up.",
+    "author": "Mateus Oliveira",
+    "icon": "M:/projects/WeebStreak/WeebStreak/assets/weebstreak.png",
+    "website": "",
+    "readme": "",
+    "notes": "",
+    "lang": "multi",
+    "payloadURI": "M:/projects/WeebStreak/WeebStreak/src/main.ts",
+    "plugin": {
+        "version": "1",
+        "permissions": {
+            "scopes": [
+                "storage",
+                "ui",
+                "server_hooks"
+            ],
+            "networkAccess": {
+                "allowedDomains": [
+                    "all"
+                ]
+            }
+        }
+    },
+    "isDevelopment": true
+}
