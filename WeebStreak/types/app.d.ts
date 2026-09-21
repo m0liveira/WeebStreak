@@ -670,6 +670,8 @@ declare namespace $app {
     function onWatchHistoryItemUpdated(cb: (event: WatchHistoryItemUpdatedEvent) => void): void;
 
     interface WatchHistoryItemUpdatedEvent {
+        [x: string]: any;
+        [x: string]: any;
         next(): void;
 
         watchHistoryItem?: Continuity_WatchHistoryItem;
@@ -1481,6 +1483,8 @@ declare namespace $app {
     function onPreUpdateEntry(cb: (event: PreUpdateEntryEvent) => void): void;
 
     interface PreUpdateEntryEvent {
+        [x: string]: any;
+        [x: string]: any;
         next(): void;
 
         preventDefault(): void;
