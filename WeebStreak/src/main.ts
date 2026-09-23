@@ -122,6 +122,23 @@ function init() {
             return data as StreakData;
         }
 
+        function checkAndResetBrokenStreak() {
+            let data = getStoredData();
+
+            if (!data.lastUpdateDate) return;
+
+            let today = getAdjustedDate();
+            let lastDate = new Date(data.lastUpdateDate);
+            let currentDate = new Date(today);
+            let diffTime = currentDate.getTime() - lastDate.getTime();
+            let diffDays = Math.round(diffTime / (1000 * 3600 * 24));
+
+            if (diffDays > 1 && data.currentStreaks.general > 0) {
+                data.currentStreaks = { general: 0, anime: 0, manga: 0 };
+                setStoredData(data);
+            }
+        }
+
         function checkAndUpdateStreak(type: string, title: string) {
             let data = getStoredData();
             let today = getAdjustedDate();
@@ -226,11 +243,13 @@ function init() {
 
         // #region: UI
         const tray = ctx.newTray({
-            iconUrl: "https://seanime.rahim.app/logo_2.png",
+            iconUrl: "https://github.com/m0liveira/WeebStreak/blob/main/WeebStreak/assets/weebstreak.png",
             withContent: true,
         });
 
         tray.render(() => {
+            checkAndResetBrokenStreak();
+
             const data = getStoredData();
             const currentStreak = (data && data.currentStreaks) ? data.currentStreaks.general : 0;
             const currentMangaStreak = (data && data.currentStreaks) ? data.currentStreaks.manga : 0;
