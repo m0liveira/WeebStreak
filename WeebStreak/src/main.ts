@@ -243,7 +243,7 @@ function init() {
 
         // #region: UI
         const tray = ctx.newTray({
-            iconUrl: "https://github.com/m0liveira/WeebStreak/blob/main/WeebStreak/assets/weebstreak.png",
+            iconUrl: "https://raw.githubusercontent.com/m0liveira/WeebStreak/main/WeebStreak/assets/weebstreak.png",
             withContent: true,
         });
 
