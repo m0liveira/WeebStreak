@@ -18,7 +18,7 @@ Keep your anime and manga streak alive. WeebStreak is a plugin for Seanime that 
 
 1. Open Seanime and navigate to the **Plugins** section.
 2. Click on **Install from URL**.
-3. Paste the manifest link: `https://github.com/m0liveira/WeebStreak/blob/main/WeebStreak/weebstreak.json`
+3. Paste the manifest link: `https://raw.githubusercontent.com/m0liveira/WeebStreak/main/WeebStreak/weebstreak.json`
 4. Click Install and restart Seanime if necessary.
 
 ## How it Works
