@@ -218,14 +218,15 @@ function init() {
             text200: 'var(--streak-text-200, #5C5C5C)',
             text100: 'var(--streak-text-100, #E6E6E6)',
             accent: 'var(--streak-accent, #6152DF)',
+            font: 'var(--streak-font, inherit)',
         };
 
         const cssStyles = `
             .streak-flame { background-image: url('${flameBase64}'); background-size: contain; background-repeat: no-repeat; background-position: center; aspect-ratio: 1/1; width: auto; height: 100%; }
             .streak-current-text { justify-content: space-between; height: 100%; }
-            .streak-span { color: ${globalStyles.text200}; font-family: 'inter'; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; width: auto; height: auto; }
+            .streak-span { color: ${globalStyles.text200}; font-family: ${globalStyles.font}; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; width: auto; height: auto; }
             .streak-streak { display: flex; justify-content: flex-start; align-items: flex-end; flex-direction: row; gap: 0.75rem; }
-            .streak-text { color: ${globalStyles.text100}; font-family: 'inter'; font-size: 3.25rem; font-weight: 600; width: auto; height: auto; margin-bottom: 0.75rem; }
+            .streak-text { color: ${globalStyles.text100}; font-family: ${globalStyles.font}; font-size: 3.25rem; font-weight: 600; width: auto; height: auto; margin-bottom: 0.75rem; }
             .streak-info-item { display: flex; justify-content: flex-end; align-items: center; flex-direction: row; gap: 0.5rem; }
             .streak-info-item .streak-span { font-size: 1rem; text-transform: default; }
             .streak-info-icon { width: 1.5rem; height: auto; object-fit: contain; }
@@ -316,7 +317,7 @@ function init() {
                 : "No activity yet";
 
             return tray.stack({
-                style: { backgroundColor: 'inherit', width: '100%', height: '100%', padding: '1.5rem' },
+                style: { backgroundColor: globalStyles.background, width: '100%', height: '100%', padding: '1.5rem' },
                 items: [
                     tray.css(cssStyles),
                     tray.flex({
