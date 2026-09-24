@@ -27,7 +27,7 @@ WeebStreak automatically inherits your current Seanime font. If you want to cust
 
 ```css
 :root {
-    --streak-background: #070707; // use inherit for your preset seanime background color
+    --streak-background: #070707; // use transparent for your preset seanime background color
     --streak-dark: #1A1A1A;
     --streak-border: #2E2E2E;
     --streak-text-200: #5C5C5C;
