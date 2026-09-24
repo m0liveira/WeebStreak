@@ -222,6 +222,7 @@ function init() {
         };
 
         const cssStyles = `
+            div:has(> .streak-root), [role="dialog"]:has(.streak-root) {background-color: ${globalStyles.background} !important;}
             .streak-flame { background-image: url('${flameBase64}'); background-size: contain; background-repeat: no-repeat; background-position: center; aspect-ratio: 1/1; width: auto; height: 100%; }
             .streak-current-text { justify-content: space-between; height: 100%; }
             .streak-span { color: ${globalStyles.text200}; font-family: ${globalStyles.font}; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; width: auto; height: auto; }
@@ -317,6 +318,7 @@ function init() {
                 : "No activity yet";
 
             return tray.stack({
+                className: 'streak-root',
                 style: { backgroundColor: globalStyles.background, width: '100%', height: '100%', padding: '1.5rem' },
                 items: [
                     tray.css(cssStyles),

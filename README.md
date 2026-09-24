@@ -36,3 +36,5 @@ WeebStreak automatically inherits your current Seanime font. If you want to cust
     --streak-font: 'inter'; // the font is already defaulted to your seanime font
 }
 ```
+
+Note that you can also change other styles by making use of the css classes defined for the plugin!!
