@@ -21,14 +21,18 @@ Keep your anime and manga streak alive. WeebStreak is a plugin for Seanime that 
 3. Paste the manifest link: `https://raw.githubusercontent.com/m0liveira/WeebStreak/main/WeebStreak/weebstreak.json`
 4. Click Install and restart Seanime if necessary.
 
-## How it Works
+## Customization
 
-The plugin uses Seanime's background hooks to listen for media consumption. When an update triggers, it fetches the exact media metadata via the AniList GraphQL API and updates your local streak data. All UI logic is safely isolated inside the plugin's tray render cycle.
+WeebStreak automatically inherits your current Seanime font. If you want to customize the dashboard colors manually, add these variables to your Seanime **Custom CSS** settings:
 
-## Development
-
-This plugin is built with TypeScript and runs on Seanime's Goja engine.
-
-1. Clone the repository.
-2. Make your changes in `src/main.ts`.
-3. Test locally by pointing Seanime to your local manifest file in development mode.
+```css
+:root {
+    --streak-background: #070707; // use inherit for your preset seanime background color
+    --streak-dark: #1A1A1A;
+    --streak-border: #2E2E2E;
+    --streak-text-200: #5C5C5C;
+    --streak-text-100: #E6E6E6;
+    --streak-accent: #6152DF; // use var(--brand) for your preset seanime accent color
+    --streak-font: 'inter'; // the font is already defaulted to your seanime font
+}
+```
